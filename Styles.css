@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('./images/camp.jpg'); 
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda la página */
+    background-position: center top; /* Centra la imagen de fondo y la posiciona desde la parte superior */
+    background-repeat: no-repeat;
+    overflow-x: hidden; 
+}
+
+
+.main-content {
+    padding: 20px; 
+    color: #333; 
+}
+
+
+.header-main {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(50, 50, 50, 0.8); 
+    color: aliceblue;
+    padding: 6px 22px;
+    z-index: 1; /* Asegura que el header esté sobre las llamas */
+    box-shadow: 0 0 30px 20px orange;
+}
+
+.flames-container {
+    position: absolute;
+    bottom: -40px; /* Ajusta la posición para que sobresalgan un poco */
+    left: 0;
+    width: 100%;
+    height: 110px; /* Ajusta la altura para que sobresalgan */
+    overflow: visible; /* Muestra las partes que sobresalgan */
+    z-index: 0; /* Coloca las llamas detrás del contenido del header */
+}
+
+.flames {
+    width: 200%; /* Duplica el ancho para la animación */
+    height: 100%;
+    animation: flamesAnimation 2s infinite linear;
+}
+
+@keyframes flamesAnimation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.header-logo1, .header-logo2 {
+    flex: 1;
+}
+
+.header-logo1 img, .header-logo2 img {
+    width: 100px;
+}
+
+.ul-links {
+    display: flex;
+    gap: 50px;
+    flex: 2;
+    justify-content: center;
+}
+
+.ul-links .links a {
+    color: aliceblue;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.ul-links .links a:hover {
+    color: #f0ad4e;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    flex: 2;
+    justify-content: flex-end;
+}
+
+.search-form input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px 0 0 3px;
+}
+
+.search-form button {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    background-color: #f0ad4e;
+    color: white;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #ec971f;
+}
+
+
+.header-logo1, .header-logo2 {
+    flex: 1;
+}
+
+.header-logo1 img, .header-logo2 img {
+    width: 100px;
+}
+
+.ul-links {
+    display: flex;
+    gap: 50px;
+    flex: 2;
+    justify-content: center;
+}
+
+.ul-links .links a {
+    color: aliceblue;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.ul-links .links a:hover {
+    color: #f0ad4e;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    flex: 2;
+    justify-content: flex-end;
+}
+
+.search-form input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px 0 0 3px;
+}
+
+.search-form button {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    background-color: #f0ad4e;
+    color: white;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #ec971f;
+}
+.dropdown {
+    position: relative;
+    display: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
+}
+
+@media screen and (max-width: 975px) {
+    .ul-links {
+        display: none; 
+    }
+
+    .dropdown {
+        display: inline-block; 
+        margin-right: 20px; 
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block; 
+    }
+}
+
+
+@media screen and (max-width: 610px) {
+    .dropdown {
+        display: inline-block; 
+        margin-right: 20px; 
+    }
+    .header-logo2{
+        display: none;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .search-form input[type="text"] {
+        padding: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 3px 0 0 3px;
+        width: 30px;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block; 
+    }
+}
