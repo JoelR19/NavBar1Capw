@@ -192,7 +192,7 @@ body {
     background-color: #00A4BD;
 }
 
-@media screen and (max-width: 975px) {
+@media screen and (max-width: 1127px) {
     .ul-links {
         display: none; 
     }
@@ -205,10 +205,14 @@ body {
     .dropdown:hover .dropdown-content {
         display: block; 
     }
+    body{
+
+        background-image: url('./images/fond.jpeg'); 
+    }
 }
 
 
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 717px) {
     .dropdown {
         display: inline-block; 
         margin-right: 20px; 
@@ -218,6 +222,10 @@ body {
     }
     .dropdown:hover .dropdown-content {
         display: block;
+    }
+    body{
+
+        background-image: url('./images/6.jpg'); 
     }
 }
 
@@ -232,5 +240,12 @@ body {
     }
     .dropdown:hover .dropdown-content {
         display: block; 
+    }
+}
+
+@media screen and (max-width: 416px){
+    body{
+
+        background-image: url('./images/esta.jpg'); 
     }
 }
