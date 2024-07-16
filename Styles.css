@@ -1,3 +1,4 @@
+/* Estilos globales */
 * {
     margin: 0;
     padding: 0;
@@ -6,36 +7,33 @@
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Estilos del cuerpo */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url('./images/camp.jpg'); 
+    background-image: url('./images/camp.jpg'); /* Ruta de tu imagen de fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda la página */
     background-position: center top; /* Centra la imagen de fondo y la posiciona desde la parte superior */
-    background-repeat: no-repeat;
-    overflow-x: hidden; 
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
 }
 
-
-.main-content {
-    padding: 20px; 
-    color: #333; 
-}
-
-
+/* Estilos del encabezado */
 .header-main {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(50, 50, 50, 0.8); 
+    background-color: rgba(50, 50, 50, 0.7); /* Gris oscuro semi-transparente */
     color: aliceblue;
     padding: 6px 22px;
-    z-index: 1; /* Asegura que el header esté sobre las llamas */
-    box-shadow: 0 0 30px 20px orange;
+    z-index: 10; /* Asegura que el header esté sobre las llamas */
+    box-shadow: 0 0 30px 20px orange; /* Sombra para efecto visual */
 }
 
+/* Contenedor de las llamas */
 .flames-container {
     position: absolute;
     bottom: -40px; /* Ajusta la posición para que sobresalgan un poco */
@@ -43,9 +41,10 @@ body {
     width: 100%;
     height: 110px; /* Ajusta la altura para que sobresalgan */
     overflow: visible; /* Muestra las partes que sobresalgan */
-    z-index: 0; /* Coloca las llamas detrás del contenido del header */
+    z-index: 5; /* Coloca las llamas detrás del contenido del header */
 }
 
+/* Animación de las llamas */
 .flames {
     width: 200%; /* Duplica el ancho para la animación */
     height: 100%;
@@ -56,7 +55,11 @@ body {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+.header-logo2{
+    margin-left: 50px;
+}
 
+/* Estilos de los logotipos */
 .header-logo1, .header-logo2 {
     flex: 1;
 }
@@ -65,6 +68,8 @@ body {
     width: 100px;
 }
 
+
+/* Estilos de los enlaces del menú */
 .ul-links {
     display: flex;
     gap: 50px;
@@ -74,19 +79,24 @@ body {
 
 .ul-links .links a {
     color: aliceblue;
-    font-size: 18px;
+    font-size: 25px;
     transition: color 0.3s;
+    z-index: 20; /* Asegura que las opciones del menú estén superpuestas */
+    position: relative;
 }
 
 .ul-links .links a:hover {
     color: #f0ad4e;
 }
 
+/* Estilos del formulario de búsqueda */
 .search-form {
     display: flex;
     align-items: center;
     flex: 2;
     justify-content: flex-end;
+    z-index: 20; /* Asegura que el formulario de búsqueda esté superpuesto */
+    position: relative;
 }
 
 .search-form input[type="text"] {
@@ -110,60 +120,9 @@ body {
     background-color: #ec971f;
 }
 
-
-.header-logo1, .header-logo2 {
-    flex: 1;
-}
-
-.header-logo1 img, .header-logo2 img {
-    width: 100px;
-}
-
-.ul-links {
-    display: flex;
-    gap: 50px;
-    flex: 2;
-    justify-content: center;
-}
-
-.ul-links .links a {
-    color: aliceblue;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.ul-links .links a:hover {
-    color: #f0ad4e;
-}
-
-.search-form {
-    display: flex;
-    align-items: center;
-    flex: 2;
-    justify-content: flex-end;
-}
-
-.search-form input[type="text"] {
-    padding: 5px;
-    font-size: 16px;
-    border: none;
-    border-radius: 3px 0 0 3px;
-}
-
-.search-form button {
-    padding: 5px 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 0 3px 3px 0;
-    background-color: #f0ad4e;
-    color: white;
-    cursor: pointer;
-}
-
-.search-form button:hover {
-    background-color: #ec971f;
-}
-.dropdown {
+/* Estilos del menú desplegable */
+.dropdown, .dropdown-content {
+    z-index: 20; /* Asegura que el contenido del dropdown esté superpuesto */
     position: relative;
     display: none;
 }
@@ -174,24 +133,26 @@ body {
     width: 100%;
     overflow: auto;
     box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    background-color: rgba(50, 50, 50, 0.8); /* Fondo semi-transparente similar al header */
+    padding: 10px; /* Añade espaciado al contenido del dropdown */
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: block; /* Muestra el contenido desplegable al hacer hover */
 }
 
 .dropdown-content a {
     display: block;
-    color: #000000;
-    padding: 5px;
+    color: #fff;
+    padding: 10px 15px;
     text-decoration: none;
 }
 
 .dropdown-content a:hover {
-    color: #FFFFFF;
     background-color: #00A4BD;
 }
 
+/* Estilos para pantallas más pequeñas */
 @media screen and (max-width: 1127px) {
     .ul-links {
         display: none; 
@@ -205,30 +166,30 @@ body {
     .dropdown:hover .dropdown-content {
         display: block; 
     }
-    body{
 
+    body {
         background-image: url('./images/fond.jpeg'); 
     }
 }
-
 
 @media screen and (max-width: 717px) {
     .dropdown {
         display: inline-block; 
         margin-right: 20px; 
     }
-    .header-logo2{
+
+    .header-logo2 {
         display: none;
     }
+
     .dropdown:hover .dropdown-content {
         display: block;
     }
-    body{
 
+    body {
         background-image: url('./images/6.jpg'); 
     }
 }
-
 
 @media screen and (max-width: 500px) {
     .search-form input[type="text"] {
@@ -238,14 +199,14 @@ body {
         border-radius: 3px 0 0 3px;
         width: 30px;
     }
+
     .dropdown:hover .dropdown-content {
         display: block; 
     }
 }
 
-@media screen and (max-width: 416px){
-    body{
-
+@media screen and (max-width: 416px) {
+    body {
         background-image: url('./images/esta.jpg'); 
     }
 }
